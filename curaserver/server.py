@@ -34,7 +34,7 @@ class CliSlicer(Slicer):
         #print ' '.join(args)
         try:
             subprocess.check_call(args)
-        except Exception, e:
+        except Exception:
             return None
 
         ret = open(out, 'r')
@@ -74,7 +74,7 @@ class ApiSlicer(Slicer):
                 scene.add(m)
             engine.runEngine(scene)
             engine.wait()
-        except Exception, e:
+        except Exception:
             return None
 
         result = engine.getResult()
